@@ -17,7 +17,7 @@ import FallenRobot.modules.sql.notes_sql as sql
 
 # from FallenRobot.modules.rules import get_rules
 import FallenRobot.modules.sql.rules_sql as rulessql
-from FallenRobot import JOIN_LOGGER, LOGGER, OWNER_ID, SUPPORT_CHAT, dispatcher
+from FallenRobot import EVENT_LOGS, LOGGER, OWNER_ID, SUPPORT_CHAT, dispatcher
 from FallenRobot.__main__ import DATA_IMPORT
 from FallenRobot.modules.connection import connected
 from FallenRobot.modules.helper_funcs.alternate import typing_action
@@ -332,7 +332,7 @@ def export_data(update, context):
     tgl = time.strftime("%H:%M:%S - %d/%m/%Y", time.localtime(time.time()))
     try:
         context.bot.sendMessage(
-            JOIN_LOGGER,
+            EVENT_LOGS,
             "*Successfully imported backup:*\nChat: `{}`\nChat ID: `{}`\nOn: `{}`".format(
                 chat.title, chat_id, tgl
             ),

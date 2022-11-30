@@ -4,7 +4,7 @@ from functools import wraps
 
 from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
 
-from FallenRobot import pbot, EVENT_LOGS
+from FallenRobot import pbot, OWNER_ID
 
 
 def split_limits(text):
@@ -49,7 +49,7 @@ def capture_err(func):
                 ),
             )
             for x in error_feedback:
-                await pbot.send_message(EVENT_LOGS, x)
+                await pbot.send_message(OWNER_ID, x)
             raise err
 
     return capture

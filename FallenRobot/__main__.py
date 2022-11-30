@@ -37,7 +37,6 @@ from FallenRobot import (
     SUPPORT_CHAT,
     TOKEN,
     URL,
-    WEBHOOK,
     StartTime,
     dispatcher,
     pbot,
@@ -724,7 +723,7 @@ def main():
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
             dispatcher.bot.send_photo(
-                f"@{SUPPORT_CHAT}",
+                SUPPORT_CHAT,
                 photo=START_IMG,
                 caption=f"""
 ㅤ🥀 {BOT_NAME} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ...

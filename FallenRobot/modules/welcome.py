@@ -29,7 +29,7 @@ from FallenRobot import (
     DEMONS,
     DEV_USERS,
     DRAGONS,
-    JOIN_LOGGER,
+    EVENT_LOGS,
     LOGGER,
     OWNER_ID,
     TIGERS,
@@ -273,7 +273,7 @@ def new_member(update: Update, context: CallbackContext):
                         break
                 if creator:
                     bot.send_message(
-                        JOIN_LOGGER,
+                        EVENT_LOGS,
                         "#NEW_GROUP\n<b>Group name:</b> {}\n<b>ID:</b> <code>{}</code>\n<b>Creator:</b> <code>{}</code>".format(
                             html.escape(chat.title), chat.id, html.escape(creator)
                         ),
@@ -281,7 +281,7 @@ def new_member(update: Update, context: CallbackContext):
                     )
                 else:
                     bot.send_message(
-                        JOIN_LOGGER,
+                        EVENT_LOGS,
                         "#NEW_GROUP\n<b>Group name:</b> {}\n<b>ID:</b> <code>{}</code>".format(
                             html.escape(chat.title), chat.id
                         ),
@@ -532,21 +532,6 @@ def left_member(update: Update, context: CallbackContext):
 
             # Ignore bot being kicked
             if left_mem.id == bot.id:
-                return
-
-            # Give the owner a special goodbye
-            if left_mem.id == OWNER_ID:
-                update.effective_message.reply_text(
-                    "Oi! Genos! He left..", reply_to_message_id=reply
-                )
-                return
-
-            # Give the devs a special goodbye
-            elif left_mem.id in DEV_USERS:
-                update.effective_message.reply_text(
-                    "See you later at the Hero's Association!",
-                    reply_to_message_id=reply,
-                )
                 return
 
             # if media goodbye, use appropriate function for it

@@ -36,7 +36,6 @@ from FallenRobot import (
     START_IMG,
     SUPPORT_CHAT,
     TOKEN,
-    URL,
     StartTime,
     dispatcher,
     pbot,

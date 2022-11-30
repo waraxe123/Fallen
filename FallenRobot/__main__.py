@@ -722,7 +722,7 @@ def main():
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
             dispatcher.bot.send_photo(
-                SUPPORT_CHAT,
+                chat_id=f"@{SUPPORT_CHAT}",
                 photo=START_IMG,
                 caption=f"""
 ㅤ🥀 {BOT_NAME} ɪs ᴀʟɪᴠᴇ ʙᴀʙʏ...

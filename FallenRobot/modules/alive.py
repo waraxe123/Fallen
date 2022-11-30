@@ -4,7 +4,7 @@ from telethon import __version__ as tlhver
 
 from pyrogram import filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-from FallenRobot import pbot, BOT_NAME, BOT_USERNAME, OWNER_ID, SUPPORT_CHAT
+from FallenRobot import pbot, BOT_NAME, BOT_USERNAME, OWNER_ID, SUPPORT_CHAT, START_IMG
 
 
 @pbot.on_message(filters.command("alive"))
@@ -22,7 +22,7 @@ async def awake(_, message: Message):
         ]
     ]
     await message.reply_photo(
-        photo="https://telegra.ph/file/40eb1ed850cdea274693e.jpg",
+        photo=START_IMG,
         caption=TEXT,
         reply_markup=InlineKeyboardMarkup(BUTTON),
     )

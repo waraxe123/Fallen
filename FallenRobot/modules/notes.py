@@ -23,7 +23,7 @@ from telegram.ext.dispatcher import run_async
 from telegram.utils.helpers import escape_markdown, mention_markdown
 
 import FallenRobot.modules.sql.notes_sql as sql
-from FallenRobot import DRAGONS, JOIN_LOGGER, LOGGER, SUPPORT_CHAT, dispatcher
+from FallenRobot import DRAGONS, EVENT_LOGS, LOGGER, SUPPORT_CHAT, dispatcher
 from FallenRobot.modules.disable import DisableAbleCommandHandler
 from FallenRobot.modules.helper_funcs.chat_status import connection_status, user_admin
 from FallenRobot.modules.helper_funcs.misc import build_keyboard, revert_buttons
@@ -70,7 +70,7 @@ def get(update, context, notename, show_none=True, no_format=False):
             reply_id = message.message_id
 
         if note.is_reply:
-            if JOIN_LOGGER:
+            if EVENT_LOGS:
                 try:
                     bot.forward_message(
                         chat_id=chat_id, from_chat_id=JOIN_LOGGER, message_id=note.value

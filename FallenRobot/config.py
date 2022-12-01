@@ -5,32 +5,24 @@ class Config(object):
     API_ID = 
     API_HASH = ""
 
-  # Get this value for currency converter from https://www.alphavantage.co/support/#api-key
-    CASH_API_KEY = ""
+    CASH_API_KEY = ""  # Get this value for currency converter from https://www.alphavantage.co/support/#api-key
 
-  # A sql database url from elephantsql.com
-    DATABASE_URL = ""
+    DATABASE_URL = ""  # A sql database url from elephantsql.com
 
-  # Event logs channel to note down important bot level events
-    EVENT_LOGS = ()
+    EVENT_LOGS = ()  # Event logs channel to note down important bot level events
 
-  # Get ths value from cloud.mongodb.com
-    MONGO_DB_URI = ""
+    MONGO_DB_URI = ""  # Get ths value from cloud.mongodb.com
 
   # Telegraph link of the image which will be shown at start command.
     START_IMG = "https://te.legra.ph/file/40eb1ed850cdea274693e.jpg"
 
-  # Your Telegram support group chat username where your users will go and bother you
-    SUPPORT_CHAT = ""
+    SUPPORT_CHAT = "DevilsHeavenMF"  # Your Telegram support group chat username where your users will go and bother you
 
-  # Get bot token from @BotFather on Telegram
-    TOKEN = ""
+    TOKEN = ""  # Get bot token from @BotFather on Telegram
 
-  # Get this value from https://timezonedb.com/api
-    TIME_API_KEY = ""
+    TIME_API_KEY = ""  # Get this value from https://timezonedb.com/api
 
-  # User id of your telegram account (Must be integer)
-    OWNER_ID = 
+    OWNER_ID =   # User id of your telegram account (Must be integer)
 
   # Optional fields
     BL_CHATS = []  # List of groups that you want blacklisted.

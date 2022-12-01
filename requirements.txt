@@ -24,7 +24,7 @@ html2text
 jikanpy
 lxml
 markdown2
-motor==3.0.0
+motor
 nltk
 opencv-python-headless
 Pillow

@@ -10,7 +10,7 @@
          "Fallen"
       ],   
    "repository": "https://github.com/TheAnonymous2005/FallenRobot",
-   "stack": "heroku-20",
+   "stack": "heroku-22",
    "addons": [
       {
          "options": {

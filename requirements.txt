@@ -1,6 +1,5 @@
 aiofiles
 aiohttp
-alphabet_detector
 apscheduler
 asyncio
 beautifulsoup4

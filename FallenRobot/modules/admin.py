@@ -968,6 +968,93 @@ def button(update: Update, context: CallbackContext) -> str:
         )
         return ""
 
+    
+@connection_status
+
+def bug_reporting(update: Update, _: CallbackContext):
+
+    chat = update.effective_chat
+
+    msg = update.effective_message
+
+    user = update.effective_user
+
+    bot = dispatcher.bot
+
+    invitelink = bot.exportChatInviteLink(chat.id)
+
+    puki = msg.text.split(None, 1)
+
+    if len(puki) >= 2:
+
+        bugnya = puki[1]
+
+    else:
+
+        msg.reply_text(
+
+            "❌ <b>You must specify the bug to report.</b>\n • example: <code>/bug Music not working.</code>",
+
+            parse_mode=ParseMode.HTML,
+
+        )
+
+        return
+
+    try:
+
+        if len(bugnya) > 100:
+
+            return msg.reply_text("Bug must needs to be under 100 characters!")
+
+        bot.sendMessage(
+
+            chat.id,
+
+            f"✅ Your Bug was submitted to <b>Bot Admins</b>. Thanks for reporting the bug.",
+
+            parse_mode=ParseMode.HTML,
+
+        )
+
+        if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
+
+            try:
+
+                bot.sendMessage(
+
+                    f"@{SUPPORT_CHAT}",
+
+                    f"📣 <b>New bug reported.</b>\n\n<b>Chat:</b> <a href='{invitelink}'>{chat.title}</a>\n<b>Name:</b> <a href='tg://user?id={msg.from_user.id}'>{mention_html(msg.from_user.id, msg.from_user.first_name)}</a>\n<b>User ID:</b> <code>{msg.from_user.id}</code>\n<b>Chat id:</b> <code>{chat.id}</code>\n\nContent of the report:\n{bugnya}",
+
+                    reply_markup=InlineKeyboardMarkup(
+
+                        [[InlineKeyboardButton("Go To Mesaage", url=f"{msg.link}")]]
+
+                    ),
+
+                    parse_mode=ParseMode.HTML,
+
+                    disable_web_page_preview=True,
+
+                )
+
+            except Unauthorized:
+
+                LOGGER.warning(
+
+                    "Bot isnt able to send message to support_chat, go and check!"
+
+                )
+
+            except BadRequest as e:
+
+                LOGGER.warning(e.message)
+
+    except BadRequest:
+
+        pass
+    
 
 __help__ = """
 *User Commands*:

@@ -28,8 +28,8 @@ from traceback import format_exc
 from pyrogram import filters
 from pyrogram.types import Message
 
-from Exon import arq, pgram
-from Exon.utils.errors import capture_err
+from FallenRobot import arq, pbot
+from FallenRobot.utils.errors import capture_err
 
 
 async def quotify(messages: list):
@@ -55,7 +55,7 @@ def isArgInt(message: Message) -> list:
         return [False, 0]
 
 
-@pgram.on_message(filters.command("q"))
+@pbot.on_message(filters.command("q"))
 @capture_err
 async def quotly_func(client, message: Message):
     if not message.reply_to_message:

@@ -28,7 +28,7 @@ from traceback import format_exc
 from pyrogram import filters
 from pyrogram.types import Message
 
-from FallenRobot import arq, pbot
+from FallenRobot import pbot
 from FallenRobot.utils.errors import capture_err
 
 

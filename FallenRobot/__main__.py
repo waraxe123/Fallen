@@ -1262,7 +1262,7 @@ def main():
     dispatcher.add_handler(migrate_handler)
     dispatcher.add_handler(donate_handler)
 
-    dispatcher.add_error_handler(error_c
+    dispatcher.add_error_handler(error_callback)
 
     LOGGER.info("Using long polling.")
     updater.start_polling(timeout=15, read_latency=4, clean=True)

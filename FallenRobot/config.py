@@ -2,8 +2,8 @@ class Config(object):
     LOGGER = True
 
   # Get this value from my.telegram.org/apps
-    API_ID = 25924955
-    API_HASH = "140d8d0ad7c45e934d82dfcbba019e0d"
+    API_ID = 12538418
+    API_HASH = "d3ff047ed516f4f1c587f9cbed3fae39"
 
     CASH_API_KEY = "MTUCS6JPUFR8XRPO"  # Get this value for currency converter from https://www.alphavantage.co/support/#api-key
 
@@ -22,15 +22,15 @@ class Config(object):
 
     TIME_API_KEY = "EYO2G96ONPI6"  # Get this value from https://timezonedb.com/api
 
-    OWNER_ID = 1784179805  # User id of your telegram account (Must be integer)
+    OWNER_ID = 1962124154  # User id of your telegram account (Must be integer)
 
   # Optional fields
     BL_CHATS = []  # List of groups that you want blacklisted.
-    DRAGONS = [1784179805]  # User id of sudo users
-    DEV_USERS = [1784179805]  # User id of dev users
-    DEMONS = [1784179805]  # User id of support users
-    TIGERS = [1784179805]  # User id of tiger users
-    WOLVES = [1784179805]  # User id of whitelist users
+    DRAGONS = [1962124154]  # User id of sudo users
+    DEV_USERS = [1962124154]  # User id of dev users
+    DEMONS = [1962124154]  # User id of support users
+    TIGERS = [1962124154]  # User id of tiger users
+    WOLVES = [1962124154]  # User id of whitelist users
 
     ALLOW_CHATS = True
     ALLOW_EXCL = True
